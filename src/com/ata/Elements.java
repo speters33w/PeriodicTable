@@ -4,22 +4,22 @@ import java.time.Year;
 
 public enum Elements {
     //NAME(AtomicNumber,"element","symbol",mass,neutrons,protons,electrons,period,group,phase,radioactive,natural,metal,nonmetal,metalloid,"metalGroup",radius,electronegativity,firstIonization,density,meltingPoint,boilingPoint,isotopes,"discoverer",Year.of(Year),specificHeat,shells,valence),
-    H(1,"Hydrogen","H",1.008F,0,1,1,1,1,"gas",false,true,false,true,false,"Nonmetal",0.79F,2.2F,13.5984F,0.0000899F,14.175F,20.28F,3,"Cavendish",Year.of(1766),14.304F,1,1),
+    H(1,"Hydrogen","H",1.008F,0,1,1,1,1,"gas",false,true,false,true,false,"Non-Metal",0.79F,2.2F,13.5984F,0.0000899F,14.175F,20.28F,3,"Cavendish",Year.of(1766),14.304F,1,1),
     HE(2,"Helium","He",4.002F,2,2,2,1,18,"gas",false,true,false,true,false,"Noble Gas",0.49F,-1,24.5874F,0.000179F,-1,4.22F,5,"Janssen",Year.of(1868),5.193F,1,-1),
     LI(3,"Lithium","Li",6.941F,4,3,3,2,1,"solid",false,true,true,false,false,"Alkali Metal",2.1F,0.98F,5.3917F,0.534F,453.85F,1615F,5,"Arfvedson",Year.of(1817),3.582F,2,1),
     BE(4,"Beryllium","Be",9.012F,5,4,4,2,2,"solid",false,true,true,false,false,"Alkaline Earth Metal",1.4F,1.57F,9.3227F,1.85F,1560.15F,2742,6,"Vaulquelin",Year.of(1798),1.825F,2,2),
     B(5,"Boron","B",10.811F,6,5,5,2,13,"solid",false,true,false,false,true,"Metalloid",1.2F,2.04F,8.298F,2.34F,2573.15F,4200F,6,"Gay-Lussac",Year.of(1808),1.026F,2,3),
-    C(6,"Carbon","C",12.011F,6,6,6,2,14,"solid",false,true,false,true,false,"Nonmetal",0.91F,2.55F,11.2603F,2.27F,3948.15F,4300F,7,"Prehistoric",Year.of(-1),0.709F,2,4),
-    N(7,"Nitrogen","N",14.007F,7,7,7,2,15,"gas",false,true,false,true,false,"Nonmetal",0.75F,3.04F,14.5341F,0.00125F,63.29F,77.36F,8,"Rutherford",Year.of(1772),1.04F,2,5),
-    O(8,"Oxygen","O",15.999F,8,8,8,2,16,"gas",false,true,false,true,false,"Nonmetal",0.65F,3.44F,13.6181F,0.00143F,50.5F,90.2F,8,"Priestley/Scheele",Year.of(1774),0.918F,2,6),
+    C(6,"Carbon","C",12.011F,6,6,6,2,14,"solid",false,true,false,true,false,"Non-Metal",0.91F,2.55F,11.2603F,2.27F,3948.15F,4300F,7,"Prehistoric",Year.of(-1),0.709F,2,4),
+    N(7,"Nitrogen","N",14.007F,7,7,7,2,15,"gas",false,true,false,true,false,"Non-Metal",0.75F,3.04F,14.5341F,0.00125F,63.29F,77.36F,8,"Rutherford",Year.of(1772),1.04F,2,5),
+    O(8,"Oxygen","O",15.999F,8,8,8,2,16,"gas",false,true,false,true,false,"Non-Metal",0.65F,3.44F,13.6181F,0.00143F,50.5F,90.2F,8,"Priestley/Scheele",Year.of(1774),0.918F,2,6),
     F(9,"Fluorine","F",18.998F,10,9,9,2,17,"gas",false,true,false,true,false,"Halogen",0.57F,3.98F,17.4228F,0.0017F,53.63F,85.03F,6,"Moissan",Year.of(1886),0.824F,2,7),
     NE(10,"Neon","Ne",20.18F,10,10,10,2,18,"gas",false,true,false,true,false,"Noble Gas",0.51F,-1,21.5645F,0.0009F,24.703F,27.07F,8,"Ramsay and Travers",Year.of(1898),1.03F,2,8),
     NA(11,"Sodium","Na",22.99F,12,11,11,3,1,"solid",false,true,true,false,false,"Alkali Metal",2.2F,0.93F,5.1391F,0.971F,371.15F,1156F,7,"Davy",Year.of(1807),1.228F,3,1),
     MG(12,"Magnesium","Mg",24.305F,12,12,12,3,2,"solid",false,true,true,false,false,"Alkaline Earth Metal",1.7F,1.31F,7.6462F,1.74F,923.15F,1363F,8,"Black",Year.of(1755),1.023F,3,2),
     AL(13,"Aluminum","Al",26.982F,14,13,13,3,13,"solid",false,true,true,false,false,"Metal",1.8F,1.61F,5.9858F,2.7F,933.4F,2792F,8,"Wshler",Year.of(1827),0.897F,3,3),
     SI(14,"Silicon","Si",28.086F,14,14,14,3,14,"solid",false,true,false,false,true,"Metalloid",1.5F,1.9F,8.1517F,2.33F,1683.15F,3538F,8,"Berzelius",Year.of(1824),0.705F,3,4),
-    P(15,"Phosphorus","P",30.974F,16,15,15,3,15,"solid",false,true,false,true,false,"Nonmetal",1.2F,2.19F,10.4867F,1.82F,317.25F,553F,7,"BranBrand",Year.of(1669),0.769F,3,5),
-    S(16,"Sulfur","S",32.065F,16,16,16,3,16,"solid",false,true,false,true,false,"Nonmetal",1.1F,2.58F,10.36F,2.07F,388.51F,717.8F,10,"Prehistoric",Year.of(-1),0.71F,3,6),
+    P(15,"Phosphorus","P",30.974F,16,15,15,3,15,"solid",false,true,false,true,false,"Non-Metal",1.2F,2.19F,10.4867F,1.82F,317.25F,553F,7,"BranBrand",Year.of(1669),0.769F,3,5),
+    S(16,"Sulfur","S",32.065F,16,16,16,3,16,"solid",false,true,false,true,false,"Non-Metal",1.1F,2.58F,10.36F,2.07F,388.51F,717.8F,10,"Prehistoric",Year.of(-1),0.71F,3,6),
     CL(17,"Chlorine","Cl",35.453F,18,17,17,3,17,"gas",false,true,false,true,false,"Halogen",0.97F,3.16F,12.9676F,0.00321F,172.31F,239.11F,11,"Scheele",Year.of(1774),0.479F,3,7),
     AR(18,"Argon","Ar",39.948F,22,18,18,3,18,"gas",false,true,false,true,false,"Noble Gas",0.88F,-1,15.7596F,0.00178F,83.96F,87.3F,8,"Rayleigh and Ramsay",Year.of(1894),0.52F,3,8),
     K(19,"Potassium","K",39.098F,20,19,19,4,1,"solid",false,true,true,false,false,"Alkali Metal",2.8F,0.82F,4.3407F,0.862F,336.5F,1032F,10,"Davy",Year.of(1807),0.757F,4,1),
@@ -37,7 +37,7 @@ public enum Elements {
     GA(31,"Gallium","Ga",69.723F,39,31,31,4,13,"solid",false,true,true,false,false,"Metal",1.8F,1.81F,5.9993F,5.91F,302.91F,2477F,14,"de Boisbaudran",Year.of(1875),0.371F,4,3),
     GE(32,"Germanium","Ge",72.64F,41,32,32,4,14,"solid",false,true,false,false,true,"Metalloid",1.5F,2.01F,7.8994F,5.32F,1211.45F,3106F,17,"Winkler",Year.of(1886),0.32F,4,4),
     AS(33,"Arsenic","As",74.922F,42,33,33,4,15,"solid",false,true,false,false,true,"Metalloid",1.3F,2.18F,9.7886F,5.78F,1090.15F,887F,14,"Albertus Magnus",Year.of(1250),0.329F,4,5),
-    SE(34,"Selenium","Se",78.96F,45,34,34,4,16,"solid",false,true,false,true,false,"Nonmetal",1.2F,2.55F,9.7524F,4.81F,494.15F,958F,20,"Berzelius",Year.of(1817),0.321F,4,6),
+    SE(34,"Selenium","Se",78.96F,45,34,34,4,16,"solid",false,true,false,true,false,"Non-Metal",1.2F,2.55F,9.7524F,4.81F,494.15F,958F,20,"Berzelius",Year.of(1817),0.321F,4,6),
     BR(35,"Bromine","Br",79.904F,45,35,35,4,17,"liquid",false,true,false,true,false,"Halogen",1.1F,2.96F,11.8138F,3.12F,266.05F,332F,19,"Balard",Year.of(1826),0.474F,4,7),
     KR(36,"Krypton","Kr",83.798F,48,36,36,4,18,"gas",false,true,false,true,false,"Noble Gas",1F,-1,13.9996F,0.00373F,115.93F,119.93F,23,"Ramsay and Travers",Year.of(1898),0.248F,4,8),
     RB(37,"Rubidium","Rb",85.468F,48,37,37,5,1,"solid",false,true,true,false,false,"Alkali Metal",3F,0.82F,4.1771F,1.53F,312.79F,961F,20,"Bunsen and Kirchoff",Year.of(1861),0.363F,5,1),
@@ -132,13 +132,13 @@ public enum Elements {
     private final int electrons;
     private final int period;
     private final int group;
-    private final String phase; //todo: change to phase enum
+    private final Phase phase;
     private final boolean radioactive;
     private final boolean natural;
     private final boolean metal;
     private final boolean nonmetal;
     private final boolean metalloid;
-    private final String metalGroup; //todo: change to group enum
+    private final Metal metalGroup;
     private final float radius;
     private final float electronegativity;
     private final float firstIonization;
@@ -153,7 +153,7 @@ public enum Elements {
     private int valence;
 
     Elements(int atomicNumber, String element, String symbol, float mass, int neutrons, int protons, int electrons,
-             int period, int group, String phase, boolean radioactive, boolean natural, boolean metal, boolean nonmetal,
+             int period, int group, String phaseName, boolean radioactive, boolean natural, boolean metal, boolean nonmetal,
              boolean metalloid, String metalGroup, float radius, float electronegativity, float firstIonization,
              float density, float meltingPoint, float boilingPoint, int isotopes, String discoverer,
              Year discoveryYear, float specificHeat, int shells, int valence) {
@@ -166,13 +166,13 @@ public enum Elements {
         this.electrons = electrons;
         this.period = period;
         this.group = group;
-        this.phase = phase;
+        this.phase = Phase.getPhase(phaseName);
         this.radioactive = radioactive;
         this.natural = natural;
         this.metal = metal;
         this.nonmetal = nonmetal;
         this.metalloid = metalloid;
-        this.metalGroup = metalGroup;
+        this.metalGroup = Metal.getMetal(metalGroup);
         this.radius = radius;
         this.electronegativity = electronegativity;
         this.firstIonization = firstIonization;
@@ -187,114 +187,248 @@ public enum Elements {
         this.valence = valence;
     }
     
-    private enum phase {
+    private enum Phase {
         SOLID("solid"),
         LIQUID("liquid"),
         GAS("gas"),
         ARTIFICIAL("artificial");
         private String phaseName;
-        phase(String phaseName) {
+        Phase(String phaseName) {
             this.phaseName = phaseName;
         }
-        private static String getPhaseName (Elements.phase phase){
-            return phase.phaseName;
+        private static Phase getPhase (String phaseName) {
+            for(Phase phase : Phase.values()) {
+                if(phase.phaseName.equals(phaseName)) return phase;
+            }
+            return null;
         }
     }
+
+    private enum Metal {
+        ALKALI("Alkali Metal"),
+        ALKALINE_EARTH("Alkaline Earth Metal"),
+        TRANSITION("Transition Metal"),
+        POST_TRANSITION("Post-Transition Metal"),
+        METAL("Metal"),
+        METALLOID("Metalloid"),
+        NON_METAL("Non-Metal"),
+        HALOGEN("Halogen"),
+        NOBLE_GAS("Noble Gas"),
+        LANTHANIDE("Lanthanide"),
+        ACTINIDE("Actinide"),
+        TRANSACTINIDE("Transactinide"),
+        UNKNOWN("Unknown");
+
+        private String metal;
+        Metal(String metalType) {
+            this.metal = metalType;
+        }
+        private static Metal getMetal (String metalType) {
+            for(Metal metal : Metal.values()) {
+                if(metal.metal.equals(metalType)) return metal;
+            }
+            return null;
+        }
+    }
+
 
     /**
      * Returns the atomic number of an element.
      * Example:
-     * {@code getAtomicNumber(Elements.BR)}
+     * {@code Elements.BR.atomicNumber()}
      * will return {@code 35}.
-     * @param element the element.
      * @return the atomic number of the element.
      */
-    public int getAtomicNumber(Elements element) {
-        return element.atomicNumber;
+    public int atomicNumber() {
+        return atomicNumber;
     }
 
     /**
      * Returns the name of an element.
      * Example:
-     * {@code getElementName(Elements.BR)}
+     * {@code Elements.BR.elementName()}
      * will return {@code "Bromine"}.
-     * @param element the element.
      * @return the name of the element.
      */
-    public String getElementName(Elements element) {
-        return element.element;
+    public String elementName() {
+        return element;
     }
 
     /**
      * Returns the symbol of an element.
      * Example:
-     * {@code getElementSymbol(Elements.BR)}
+     * {@code Elements.BR.symbol()}
      * will return {@code "Br"}.
      * @param element the element.
      * @return the symbol of the element.
      */
-    public String getElementSymbol(Elements element) {
+    public String symbol(Elements element) {
         return element.symbol;
     }
 
     /**
      * Returns the Atomic Weight of an element in atomic mass units (amu).
      * Example:
-     * {@code getAtomicMass(Elements.BR)}
+     * {@code Elements.BR.mass()}
      * will return {@code 79.904}.
-     * @param element the element.
      * @return the symbol of the element.
      */
-    public double getAtomicMass(Elements element) {
-        return element.mass;
+    public double mass() {
+        return mass;
     }
 
     /**
      * Returns the number of neutrons in an element's atom.
      * Example:
-     * {@code getNumberOfNeutrons(Elements.BR)}
+     * {@code Elements.BR.neutrons()}
      * will return {@code 45}.
-     * @param element the element.
      * @return the number of neutrons of the element.
      */
-    public int getNumberOfNeutrons(Elements element) {
-        return element.neutrons;
+    public int neutrons() {
+        return neutrons;
     }
 
     /**
      * Returns the number of protons in an element's atom.
      * Example:
-     * {@code getNumberOfProtons(Elements.BR)}
+     * {@code Elements.BR.protons()}
      * will return {@code 35}.
-     * @param element the element.
      * @return the number of protons of the element.
      */
-    public int getNumberOfProtons(Elements element) {
-        return element.protons;
+    public int protons() {
+        return protons;
     }
 
     /**
      * Returns the number of electrons in an element's atom.
      * Example:
-     * {@code getNumberOfElectrons(Elements.BR)}
+     * {@code Elements.BR.electrons()}
      * will return {@code 35}.
-     * @param element the element.
      * @return the number of electrons of the element.
      */
-    public int getNumberOfElectrons(Elements element) {
-        return element.electrons;
+    public int electrons() {
+        return electrons;
     }
 
+    /**
+     * Returns the periodic table period (rows 1-7).
+     * Example:
+     * {@code Elements.BR.period()}
+     * will return {@code 4}.
+     * @return the period of the element.
+     */
+    public int period() {
+        return period;
+    }
 
+    /**
+     * Returns the periodic table group (column 1 - 18).
+     * Example:
+     * {@code Elements.BR.group()}
+     * will return {@code 17}.
+     * @return the group of the element.
+     */
+    public int group() {
+        return group;
+    }
 
-    //////////////////////////////////////////////////////
+    /**
+     * Returns the periodic table group in Roman numeral format,
+     * (IA, IIA, IIIB, IVB, etc.).
+     * Example:
+     * {@code Elements.BR.groupRoman()}
+     * will return {@code VIIA}.
+     * @return the group of the element in Roman Numeral format.
+     */
+    public String groupRoman() {
+        return groupToRoman(group);
+    }
+
+    /**
+     * Returns the phase of the element (solid, liquid, gas, artificial).
+     * Example:
+     * {@code Elements.BR.phase()}
+     * will return {@code "liquid"}.
+     * @return the phase of the element.
+     */
+    public String phase() {
+        return phase.phaseName;
+    }
+
+    /**
+     * Returns true if the element is radioactive.
+     * Example:
+     * {@code Elements.BR.isRadioactive()}
+     * will return {@code false}.
+     * @return true if the element is radioactive.
+     */
+    public boolean isRadioactive() {
+        return radioactive;
+    }
+
+    /**
+     * Returns true if the element is natural.
+     * Example:
+     * {@code Elements.BR.isNatural()}
+     * will return {@code true}.
+     * @return true if the element is natural.
+     */
+    public boolean isNatural() {
+        return natural;
+    }
+
+    /**
+     * Returns true if the element is metal.
+     * Example:
+     * {@code Elements.BR.isMetal()}
+     * will return {@code false}.
+     * @return true if the element is metal.
+     */
+    public boolean isMetal() {
+        return metal;
+    }
+
+    /**
+     * Returns true if the element is non-metal.
+     * Example:
+     * {@code Elements.BR.isNonMetal()}
+     * will return {@code true}.
+     * @return true if the element is non-metal.
+     */
+    public boolean isNonMetal() {
+        return nonmetal;
+    }
+
+    /**
+     * Returns true if the element is metalloid.
+     * Example:
+     * {@code Elements.BR.isMetalloid()}
+     * will return {@code false}.
+     * @return true if the element is metalloid.
+     */
+    public boolean isMetalloid() {
+        return metalloid;
+    }
+
+    /**
+     * Returns the metal group of the element (Alkali Metal, Alkaline Earth Metal, Transition Metal, etc.).
+     * Example:
+     * {@code Elements.BR.metalGroup()}
+     * will return {@code "Halogen"}.
+     * @return the metal group of the element.
+     */
+    public String metalGroup() {
+        return metalGroup.metal;
+    }
+
+    //////////  /* STATIC UTILITY METHODS */ //////////
 
     /**
      * Converts Kelvin to Celsius.
-     * @param k float temperature in degrees Celsius.
-     * @return float temperature in degrees Celsius.
+     * @param k temperature in degrees Celsius.
+     * @return temperature in degrees Celsius.
      */
-    public static float kelvinToCelsius(float k){
+    public static double kelvinToCelsius(double k){
         if(k == -1) {
             return k;
         } else {
@@ -304,14 +438,54 @@ public enum Elements {
 
     /**
      * Converts Kelvin to Fahrenheit.
-     * @param k float temperature in degrees Kelvin.
-     * @return float temperature in degrees Fahrenheit.
+     * @param k temperature in degrees Kelvin.
+     * @return temperature in degrees Fahrenheit.
      */
-    public static float kelvinToFahrenheit(float k){
+    public static double kelvinToFahrenheit(double k){
         if (k == -1) {
             return k;
         } else {
             return (k - 273.15F) * 1.8F + 32;
         }
+    }
+
+    /**
+     * Returns the periodic table group in Roman numeral format,
+     * (IA, IIA, IIIB, IVB, etc.).
+     * Example:
+     * {@code groupToRoman(Elements.BR.group())}
+     * will return {@code VIIA}.
+     * @param group the integer (1-18) group of the element.
+     * @return the element group in Roman numeral format.
+     */
+    public static String groupToRoman(int group) {
+        if (group < 1 || group > 18) {
+            return "";
+        }
+        StringBuilder roman = new StringBuilder();
+        String ab = "A";
+        if (group > 2 && group < 13) {
+            ab = "B";
+        }
+        if (group > 8) {
+            if (group > 10) {
+                group -= 10;
+            } else {
+                group = 8;
+            }
+        }
+        if(group % 5 == 4) {
+            roman.append("I");
+            group++;
+        }
+        if (group >= 5){
+            roman.append("V");
+            group -= 5;
+        }
+        if (group != 0) {
+            roman.append("I".repeat(group));
+        }
+        roman.append(ab);
+        return roman.toString();
     }
 }
