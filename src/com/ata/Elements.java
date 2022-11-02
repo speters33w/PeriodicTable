@@ -4,6 +4,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.time.Year;
 
+//todo check every element and make sure all the data is correct.
 /**
  * A Java enum representing thePeriodic Table of the Elements.
  * @author StephanPeters (peterstz,speters33w)
@@ -268,11 +269,10 @@ public enum Elements {
      * Example:
      * {@code Elements.BR.symbol()}
      * will return {@code "Br"}.
-     * @param element the element.
      * @return the symbol of the element.
      */
-    public String symbol(Elements element) {
-        return element.symbol;
+    public String symbol() {
+        return symbol;
     }
 
     /**
@@ -342,15 +342,29 @@ public enum Elements {
     }
 
     /**
-     * Returns the periodic table group in Roman numeral format,
+     * <p>Returns the periodic table group in CAS Roman numeral format,
      * (IA, IIA, IIIB, IVB, etc.).
-     * Example:
-     * {@code Elements.BR.groupRoman()}
-     * will return {@code VIIA}.
-     * @return the group of the element in Roman Numeral format.
+     * Example:<pre>
+     * {@code Elements.BR.groupRoman()}</pre>
+     * will return {@code VIIA}.</p><br><p>
+     * To return the table group in Mendeleev format, use {@code substring}.<pre>
+     * {@code (Elements.BR.groupRoman().substring(0, Elements.BR.groupRoman().length() - 1)}</pre>
+     * will return {@code VII}.</p>
+     * @return the group of the element in CAS Roman Numeral format.
      */
     public String groupRoman() {
         return groupToRoman(group);
+    }
+
+    /**
+     * Returns the periodic table block of the element (s,p,d,f).
+     * Example:
+     * {@code Elements.BR.block()}
+     * will return {@code 'p'}.
+     * @return the periodic table block of the element.
+     */
+    public char block(){
+        return getBlock(group, period);
     }
 
     /**
@@ -578,8 +592,6 @@ public enum Elements {
         return shells;
     }
 
-    //todo add periodic table blocks
-    //https://en.wikipedia.org/wiki/Valence_electron
     /**
      * Returns the number of valence electrons of the element.
      * Example:
@@ -591,6 +603,24 @@ public enum Elements {
         return valence;
     }
 
+    @Override
+    public String toString() {
+        return String.format("[%14s- Atomic Number: %3d, Element: %2s, Atomic Weight (amu): %-7s ]",
+                element, atomicNumber, symbol, mass);
+    }
+
+    //todo finish deepToString method.
+    public String deepToString(){
+        StringBuilder elementDeepToString = new StringBuilder();
+        elementDeepToString.append
+                (String.format("%s%n%nAtomic Number: %d%nElement: %s%nElement Name: %s%nAtomic Weight (amu): %.3f%n",
+                element.toUpperCase(), atomicNumber, symbol, element, mass));
+        elementDeepToString.append
+                (String.format("Standard State: %s%n",
+                 phase.phaseName.substring(0, 1).toUpperCase() + phase.phaseName.substring(1)));
+
+        return elementDeepToString.toString();
+    }
 
     //////////  /* STATIC UTILITY METHODS */ //////////
 
@@ -620,19 +650,45 @@ public enum Elements {
         }
     }
 
+    /**
+     * Makes a string UTF-8 encoded.
+     * @param string The string to be encoded.
+     * @return The encoded string.
+     */
     public static String toUtf8(String string) {
         ByteBuffer buffer = StandardCharsets.UTF_8.encode(string);
         return StandardCharsets.UTF_8.decode(buffer).toString();
     }
 
     /**
-     * Returns the periodic table group in Roman numeral format,
+     * Returns the periodic table block of the element.
+     * @param group the periodic table group of the element using the IUPAC numbering system (1-18).
+     * @param period the periodic table period of the element.
+     * @return the periodic table block of the element.
+     */
+    public char getBlock(int group, int period){
+        if (group == 3 && period >= 6) {
+            return 'f';
+        }
+        if (group >= 13) {
+            return 'p';
+        } else if (group >= 3){
+            return 'd';
+        }
+        return 's';
+    }
+
+    /**
+     * <p></p>Returns the periodic table group in CAS Roman numeral format,
      * (IA, IIA, IIIB, IVB, etc.).
-     * Example:
-     * {@code groupToRoman(Elements.BR.group())}
-     * will return {@code VIIA}.
-     * @param group the integer (1-18) group of the element.
-     * @return the element group in Roman numeral format.
+     * Example:<pre>
+     * {@code groupToRoman(Elements.BR.group())}</pre>
+     * will return {@code VIIA}.</p><p>
+     * To return the table group in Mendeleev format, use {@code substring}.<pre>
+     * {@code (groupToRoman(Elements.BR.group().substring(0, Elements.BR.group().length() - 1)}</pre>
+     * will return {@code VII}.</p>
+     * @param group the integer using the IUPAC numbering system (1-18) group of the element.
+     * @return the element group in CAS Roman numeral format.
      */
     public static String groupToRoman(int group) {
         if (group < 1 || group > 18) {
