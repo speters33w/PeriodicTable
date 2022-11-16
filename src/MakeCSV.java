@@ -5,19 +5,19 @@ public class MakeCSV {
         StringBuilder sb = new StringBuilder(
                 "AtomicNumber,Element,Symbol,AtomicMass,NumberOfNeutrons,NumberOfProtons,NumberOfElectrons,Period," +
                 "Group,Phase,Radioactive,Natural,Metal,Nonmetal,Metalloid,Type,AtomicRadius,Electronegativity," +
-                "FirstIonization,Density,MeltingPoint,BoilingPoint,NumberOfIsotopes,Discoverer,Year,SpecificHeat," +
+                "ionizationEnergy,Density,MeltingPoint,BoilingPoint,stableIsotopes,Discoverer,Year,SpecificHeat," +
                 "NumberOfShells,NumberOfValence\n");
         for (Elements element : Elements.values()) {
-            sb.append(String.format("%s,%s,%.3f,%d,%d,%d,%d,",
-                    element.atomicNumber(), element.elementName(), element.mass(), element.neutrons(), element.protons(),
-                    element.electrons(), element.period()
+            sb.append(String.format("%s,%s,%s,%.3f,%d,%d,%d,%d,",
+                    element.atomicNumber(), element.elementName(), element.symbol(), element.mass(),
+                    element.neutrons(), element.protons(), element.electrons(), element.period()
             ));
             //todo check if Lanthanides and Actinides are considered as in a numeric group on the table
             //and update enum if so.
-            if (element.metalGroup == Elements.Metal.LANTHANIDE) {
-                sb.append("6,");
-            } else if (element.metalGroup == Elements.Metal.ACTINIDE) {
-                sb.append("7,");
+            if (element.metalGroup == Elements.Metal.LANTHANIDE && element.atomicNumber() >= 58) {
+                sb.append(" ,");
+            } else if (element.metalGroup == Elements.Metal.ACTINIDE && element.atomicNumber() >= 90) {
+                sb.append(" ,");
             } else {
                 sb.append(String.format("%d,", element.group()));
             }
@@ -67,8 +67,22 @@ public class MakeCSV {
                 sb.append(String.format("%.2f", element.boilingPoint()));
             }
             sb.append(",");
-            sb.append(", ,");//todo isotopes
-            sb.append(String.format("%s,%s,", element.discoverer(), element.discoveryYear()));
+            if (element.stableIsotopes() >= 0) {
+                sb.append(String.format("%d", element.stableIsotopes()));
+            }
+            sb.append(",");
+            sb.append(String.format("%s,", element.discoverer()));
+            if (!element.discoveryYearToString().equals("-1")){
+                sb.append(String.format("%s,", element.discoveryYear()));
+            } else sb.append(",");
+            if (element.specificHeat() > 0) {
+                sb.append(String.format("%.3f", element.specificHeat()));
+            }
+            sb.append(String.format(",%d,",element.shells()));
+            if (element.valenceElectrons() >= 0) {
+                sb.append(String.format("%d", element.valenceElectrons()));
+            }
+
             sb.append("\n");
         }
         System.out.println(sb);

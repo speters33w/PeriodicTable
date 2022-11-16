@@ -7,7 +7,6 @@ public class AlternateNames {
             case "argentum" -> "Silver";
             case "aurum" -> "Gold";
             case "caesium", "cæsium" -> "Cesium";
-            case "copernicium", "ununbium" -> "Copernicium";
             case "columbium" -> "Niobium";
             case "cuprum" -> "Copper";
             case "ferrum" -> "Iron";
@@ -18,6 +17,7 @@ public class AlternateNames {
             case "stannum" -> "Tin";
             case "stibium" -> "Antimony";
             case "sulphur" -> "Sulfur";
+            case "ununbium" -> "Copernicium";
             case "ununquadium" -> "Flerovium";
             case "wolfram" -> "Tungsten";
             default -> name;
