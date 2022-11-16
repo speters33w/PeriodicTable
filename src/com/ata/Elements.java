@@ -5,7 +5,6 @@ import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 import java.time.Year;
 
-//todo check every element and make sure all the data is correct.
 /**
  * A Java enum representing thePeriodic Table of the Elements.
  * @author StephanPeters (peterstz,speters33w)
@@ -29,7 +28,7 @@ public enum Elements {
     P(15,"Phosphorus","P",30.973762F,3,15,5,"Solid","Non-Metal",180,100,111,2.19F,10.4867F,1.82,317.3F,553.65F,0.769F,1,"Hennig Brandt",Year.of(1669)),
     S(16,"Sulfur","S",32.07F,3,16,6,"Solid","Non-Metal",180,100,103,2.58F,10.36F,2.067,388.36F,717.75F,0.71F,4,"Prehistoric",Year.of(-1)),
     CL(17,"Chlorine","Cl",35.45F,3,17,7,"Gas","Halogen",175,100,99,3.16F,12.9676F,0.003214,171.65F,239.11F,0.479F,2,"Carl Wilhelm Scheele",Year.of(1774)),
-    AR(18,"Argon","Ar",39.9F,3,18,8,"Gas","Noble Gas",188,71,96,-1,15.7596F,0.0017837,83.8F,87.3F,0.52F,3,"John William Strutt [3rd Baron Rayleigh] and Sir William Ramsay",Year.of(1894)),
+    AR(18,"Argon","Ar",39.9F,3,18,8,"Gas","Noble Gas",188,71,96,-1,15.7596F,0.0017837,83.8F,87.3F,0.52F,3,"John William Strutt (3rd Baron Rayleigh) and Sir William Ramsay",Year.of(1894)),
     K(19,"Potassium","K",39.0983F,4,1,1,"Solid","Alkali Metal",275,220,196,0.82F,4.3407F,0.89,336.53F,1032F,0.757F,2,"Sir Humphrey Davy",Year.of(1807)),
     CA(20,"Calcium","Ca",40.08F,4,2,2,"Solid","Alkaline Earth Metal",231,180,171,1F,6.1132F,1.54,1115F,1757F,0.647F,5,"Sir Humphrey Davy",Year.of(1808)),
     SC(21,"Scandium","Sc",44.95591F,4,3,2,"Solid","Transition metal",211,160,148,1.36F,6.5615F,2.99,1814F,3109F,0.568F,1,"Lars Fredrick Nilson",Year.of(1879)),
@@ -112,25 +111,24 @@ public enum Elements {
     CF(98,"Californium","Cf",251.07959F,7,-1,2,"Solid","Actinide",245,-1,-1,1.3F,6.2817F,15.1,1173F,1743,-1,0,"Stanley G. Thompson and Kenneth Street and Jr. and Albert Ghiorso and and Glenn T. Seaborg",Year.of(1950)),
     ES(99,"Einsteinium","Es",252.083F,7,-1,2,"Solid","Actinide",245,-1,-1,1.3F,6.42F,8.84,1133F,1269,-1,0,"Gregory R. Choppin and Stanley G. Thompson and Albert Ghiorso and and Bernard G. Harvey",Year.of(1952)),
     FM(100,"Fermium","Fm",257.09511F,7,-1,2,"Solid","Actinide",-1,-1,-1,1.3F,6.5F,9.97,1800F,-1,-1,0,"Gregory R. Choppin and Stanley G. Thompson and Albert Ghiorso and and Bernard G. Harvey",Year.of(1952)),
-    MD(101,"Mendelevium","Md",258.09843F,7,-1,2,"Solid","Actinide",-1,-1,-1,1.3F,6.58F,10.3,1100F,-1,-1,0,"Albert Ghiorso and Bernard G. Harvey and Greogory R. Chopin and Stanley G. Thompson and and Glenn T. Seaborg",Year.of(1955)),
-    NO(102,"Nobelium","No",259.101F,7,-1,3,"Solid","Actinide",-1,-1,-1,1.3F,6.65F,9.9,1100F,-1,-1,0,"Albert Ghiorso and Torbjorn Sikkeland and John R. Walton and and Glenn T. Seaborg",Year.of(1958)),
-    LR(103,"Lawrencium","Lr",266.12F,7,3,2,"Solid","Actinide",-1,-1,-1,1.3F,-1,14.4,1900F,-1,-1,0,"Albert Ghiorso and Torbjorn Sikkeland and Almon Larsh and and Robert M. Latimer",Year.of(1961)),
-    RF(104,"Rutherfordium","Rf",267.122F,7,4,2,"Solid","Transition metal",-1,-1,-1,-1,-1,17,-1,-1,-1,0,"Researchers at the JINR and Albert Ghiorso et. al.",Year.of(1964)),
-    DB(105,"Dubnium","Db",268.126F,7,5,2,"Solid","Transition metal",-1,-1,-1,-1,-1,21.6,-1,-1,-1,0,"Researchers at the JINR and Albert Ghiorso et. al.",Year.of(1967)),
-    SG(106,"Seaborgium","Sg",269.128F,7,6,2,"Solid","Transition metal",-1,-1,-1,-1,-1,23.5,-1,-1,-1,0,"Albert Ghiorso et. al.",Year.of(1974)),
-    BH(107,"Bohrium","Bh",270.133F,7,7,2,"Solid","Transition metal",-1,-1,-1,-1,-1,26.5,-1,-1,-1,0,"Peter Armbruster and Gottfried Münzenberg et. al.",Year.of(1981)),
-    HS(108,"Hassium","Hs",269.1336F,7,8,-1,"Solid","Transition metal",-1,-1,-1,-1,-1,28,-1,-1,-1,0,"Peter Armbruster and Gottfried Münzenberg et. al.",Year.of(1984)),
-    MT(109,"Meitnerium","Mt",277.154F,7,9,-1,"Solid","Transition metal",-1,-1,-1,-1,-1,27.5,-1,-1,-1,0,"Peter Armbruster and Gottfried Münzenberg et. al.",Year.of(1982)),
-    DS (110,"Darmstadtium","Ds",282.166F,7,10,-1,"Solid (Expected)","Transition metal",-1,-1,-1,-1,-1,26.5,-1,-1,-1,0,"Jorge Rigol et. al.",Year.of(1994)),
-    RG (111,"Roentgenium","Rg",282.169F,7,11,-1,"Solid (Expected)","Transition metal",-1,-1,-1,-1,-1,22.5,-1,-1,-1,0,"Peter Armbruster and Gottfried Münzenberg et. al.",Year.of(1994)),
+    MD(101,"Mendelevium","Md",258.09843F,7,-1,2,"Solid","Actinide",-1,194,-1,1.3F,6.58F,10.3,1100F,-1,-1,0,"Albert Ghiorso and Bernard G. Harvey and Greogory R. Chopin and Stanley G. Thompson and and Glenn T. Seaborg",Year.of(1955)),
+    NO(102,"Nobelium","No",259.101F,7,-1,3,"Solid","Actinide",-1,197,-1,1.3F,6.65F,9.9,1100F,-1,-1,0,"Albert Ghiorso and Torbjorn Sikkeland and John R. Walton and and Glenn T. Seaborg",Year.of(1958)),
+    LR(103,"Lawrencium","Lr",266.12F,7,3,2,"Solid","Actinide",-1,171,-1,1.3F,-1,14.4,1900F,-1,-1,0,"Albert Ghiorso and Torbjorn Sikkeland and Almon Larsh and and Robert M. Latimer",Year.of(1961)),
+    RF(104,"Rutherfordium","Rf",267.122F,7,4,2,"Solid","Transition metal",-1,157,-1,-1,-1,17,2400F,5800F,-1,0,"Researchers at the JINR and Albert Ghiorso et. al.",Year.of(1964)),
+    DB(105,"Dubnium","Db",268.126F,7,5,2,"Solid","Transition metal",-1,149,-1,-1,-1,21.6,-1,-1,-1,0,"Researchers at the JINR and Albert Ghiorso et. al.",Year.of(1967)),
+    SG(106,"Seaborgium","Sg",269.128F,7,6,2,"Solid","Transition metal",-1,132,143,-1,-1,23.5,-1,-1,-1,0,"Albert Ghiorso et. al.",Year.of(1974)),
+    BH(107,"Bohrium","Bh",270.133F,7,7,2,"Solid","Transition metal",-1,128,141,-1,-1,26.5,-1,-1,-1,0,"Peter Armbruster and Gottfried Münzenberg et. al.",Year.of(1981)),
+    HS(108,"Hassium","Hs",269.1336F,7,8,-1,"Solid","Transition metal",-1,126,134,-1,-1,28,-1,-1,-1,0,"Peter Armbruster and Gottfried Münzenberg et. al.",Year.of(1984)),
+    MT(109,"Meitnerium","Mt",277.154F,7,9,-1,"Solid","Transition metal",-1,128,129,-1,-1,27.5,-1,-1,-1,0,"Peter Armbruster and Gottfried Münzenberg et. al.",Year.of(1982)),
+    DS (110,"Darmstadtium","Ds",282.166F,7,10,-1,"Solid (Expected)","Transition metal",-1,132,128,-1,-1,26.5,-1,-1,-1,0,"Jorge Rigol et. al.",Year.of(1994)),
+    RG (111,"Roentgenium","Rg",282.169F,7,11,-1,"Solid (Expected)","Transition metal",-1,138,121,-1,-1,22.5,-1,-1,-1,0,"Peter Armbruster and Gottfried Münzenberg et. al.",Year.of(1994)),
     CN (112,"Copernicium","Cn",286.179F,7,12,-1,"Solid (Expected)","Transition metal",-1,-1,-1,-1,-1,23.7,-1,-1,-1,0,"Peter Armbruster and Gottfried Münzenberg et. al.",Year.of(1996)),
     NH(113,"Nihonium","Nh",286.182F,7,13,-1,"Solid (Expected)","Post-Transition Metal",-1,-1,-1,-1,-1,11.85,-1,-1,-1,0,"RIKEN Nishina Center for Accelerator-based Science",Year.of(2004)),
     FL(114,"Flerovium","Fl",290.192F,7,14,-1,"Solid (Expected)","Post-Transition Metal",-1,-1,-1,-1,-1,9.928,-1,-1,-1,0,"Joint Institute for Nuclear Research",Year.of(1998)),
     MC(115,"Moscovium","Mc",290.196F,7,15,-1,"Solid (Expected)","Post-Transition Metal",-1,-1,-1,-1,-1,13.5,-1,-1,-1,0,"Joint Institute for Nuclear Research and Lawrence Livermore National Laboratory and Oak Ridge National Laboratory",Year.of(2003)),
     LV(116,"Livermorium","Lv",293.205F,7,16,-1,"Solid (Expected)","Post-Transition Metal",-1,-1,-1,-1,-1,12.9,-1,-1,-1,0,"Joint Institute for Nuclear Research and Lawrence Livermore National Laboratory",Year.of(2000)),
     TS(117,"Tennessine","Ts",294.211F,7,17,-1,"Solid (Expected)","Halogen",-1,-1,-1,-1,-1,7.2,-1,-1,-1,0,"Joint Institute for Nuclear Research and Lawrence Livermore National Laboratory and Oak Ridge National Laboratory",Year.of(2010)),
-    OG(118,"Oganesson","Og",295.216F,7,18,-1,"Gas (Expected)","Noble Gas",-1,-1,-1,-1,-1,7.2,-1,-1,-1,0,"Joint Institute for Nuclear Research and Lawrence Livermore National Laboratory",Year.of(2006));
-    public final Metal metalGroup;
+    OG(118,"Oganesson","Og",295.216F,7,18,-1,"Gas (Expected)","Noble Gas",-1,-1,-1,-1,-1,7.2,-1,-1,-1,0,"Joint Institute for Nuclear Research and Lawrence Livermore National Laboratory",Year.of(2006));     public final Metal metalGroup;
     private final int atomicNumber;
     private final String elementName;
     private final String symbol;
@@ -217,7 +215,9 @@ public enum Elements {
      * Returns the Atomic Weight of an element in atomic mass units (amu).
      * Example:
      * {@code Elements.BR.mass()}
-     * will return {@code 79.904}.
+     * will return {@code 79.904}.<br>
+     * Data from
+     * <a href="https://pubchem.ncbi.nlm.nih.gov/periodic-table/">The National Center for Biotechnology Information</a>
      * @return the Atomic Weight of an element in atomic mass units (amu).
      */
     public double mass() {
@@ -389,7 +389,8 @@ public enum Elements {
      * Returns the van der Waals atomic radius of the element in picometers (pm).
      * Example:
      * {@code Elements.BR.radiusVanDerWaals()}
-     * will return {@code 185}.
+     * will return {@code 185}.<br>
+     * Data from <a href="https://periodic.lanl.gov/index.shtml">Los Alamos National Laboratory</a>.
      * @return the van der Waals atomic radius of the element in picometers (pm).
      */
     public int radiusVanDerWaals() {
@@ -400,8 +401,17 @@ public enum Elements {
      * Returns the Empirical atomic radius of the element in picometers (pm).
      * Example:
      * {@code Elements.BR.radiusEmpirical()}
-     * will return {@code 115}.
-     * @return the van der Waals atomic radius of the element in picometers (pm).
+     * will return {@code 115}.<br><br>
+     * Most data from <br><em>Radii in Crystals</em>.<br>
+     * The Journal of Chemical Physics. 41 (10): 3199–3204. <br>
+     * Bibcode:1964JChPh..41.3199S. doi:10.1063/1.1725697.<br><br>
+     * Most predictive values from <br>Hoffman, Darleane C.; Lee, Diana M.; Pershina, Valeria (2006).
+     * <em>Transactinides and the future elements".</em><br>
+     * In Morss; Edelstein, Norman M.; Fuger, Jean (eds.).<br>
+     * <em>The Chemistry of the Actinide and Transactinide Elements (3rd ed.).</em><br>
+     * Dordrecht, The Netherlands: Springer Science+Business Media.<br>
+     * ISBN 978-1-4020-3555-5.
+     * @return the empirical atomic radius of the element in picometers (pm).
      */
     public int radiusEmpirical() {
         return radiusEmpirical;
@@ -411,7 +421,8 @@ public enum Elements {
      * Returns the Covalent (single bond) atomic radius of the element in picometers (pm).
      * Example:
      * {@code Elements.BR.radiusCovalent()}
-     * will return {@code 114}.
+     * will return {@code 114}.<br>
+     * Most predictive values from the<a href="https://www.rsc.org/periodic-table">Royal Society of Chemistry</a>.
      * @return the Covalent (single bond) atomic radius of the element in picometers (pm).
      */
     public int radiusCovalent() {
@@ -473,15 +484,14 @@ public enum Elements {
         return boilingPoint;
     }
 
-    //todo this field may need to be changed to J/(kg K) or J/(g-C) as a default,
-    // also define starting temp and barometric pressure.
-
     /**
-     * Returns the specific heat of an element in Joules per gram Kelvin J/(g·K).
+     * Returns the specific heat of an element in Joules per gram Celsius J/(g·C)
+     * (identical to Joules per gram Kelvin J/(g·K))
+     * at 25 degrees C (298 K)
      * Example:
      * {@code Elements.BR.specificHeat()}
      * will return {@code 0.474}.
-     * @return the specific heat of an element (J/(g·K)).
+     * @return the specific heat of an element (J/(g·C)).
      */
     public double specificHeat() {
         return specificHeat;
@@ -763,6 +773,24 @@ public enum Elements {
     }
 
     /**
+     * Converts J/(g·C) to J/(kg·K) for specific heat.
+     * @param joulesPerGramCelsius J/(g·C)
+     * @return J/(kg·K)
+     */
+    public static double JoulesPerGramCToJoulesPerKilogramK (double joulesPerGramCelsius){
+        return joulesPerGramCelsius * 1000;
+    }
+
+    /**
+     * Converts J/(kg·K) to J/(g·C) for specific heat.
+     * @param joulesPerKilogramKelvin J/(kg·K)
+     * @return J/(g·C)
+     */
+    public static double JoulesPerKilogramKToJoulesPerGramC (double joulesPerKilogramKelvin){
+        return joulesPerKilogramKelvin * .001;
+    }
+
+    /**
      * Makes a string UTF-8 encoded.
      * @param string The string to be encoded.
      * @return The encoded string.
@@ -774,13 +802,30 @@ public enum Elements {
 
     /**
      * Returns the periodic table block of the element.
-     * Returns an incorrect block for Lanthanum, use Elements.block() instead.
+     * Returns an incorrect block for Lanthanum, use Elements.block(int group, int period) instead.
      * @param group the periodic table group of the element using the IUPAC numbering system (1-18).
      * @return the periodic table block of the element.
      */
-    //todo workaround for Lanthanum and make method public
-    private char getBlock(int group){
+    char getBlock(int group){
         if (group == -1) {
+            return 'f';
+        }
+        if (group >= 13) {
+            return 'p';
+        } else if (group >= 3){
+            return 'd';
+        }
+        return 's';
+    }
+
+    /**
+     * Returns the periodic table block of the element.
+     * @param group the periodic table group of the element using the IUPAC numbering system (1-18).
+     * @param period the periodic table period of the element
+     * @return the periodic table block of the element.
+     */
+    public char getBlock(int group, int period){
+        if (group == -1 || (group == 3 && period == 6)) {
             return 'f';
         }
         if (group >= 13) {
