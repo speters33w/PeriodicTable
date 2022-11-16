@@ -473,8 +473,8 @@ public enum Elements {
         return boilingPoint;
     }
 
-    //todo this field may need to be changed to J/(kg K) or J/(g-C) as a default.
-    //also define starting temp and barometric pressure.
+    //todo this field may need to be changed to J/(kg K) or J/(g-C) as a default,
+    // also define starting temp and barometric pressure.
 
     /**
      * Returns the specific heat of an element in Joules per gram Kelvin J/(g·K).
