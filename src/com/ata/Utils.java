@@ -48,7 +48,7 @@ public class Utils {
      * @param angstroms value in angstroms.
      * @return value in picometers.
      */
-    public static int angstromsToPicomters(double angstroms){
+    public static int angstromsToPicometers(double angstroms){
         return (int) angstroms * 100;
     }
 
@@ -57,7 +57,7 @@ public class Utils {
      * @param joulesPerGramCelsius J/(g·C)
      * @return J/(kg·K)
      */
-    public static double JoulesPerGramCToJoulesPerKilogramK (double joulesPerGramCelsius){
+    public static double joulesPerGramCToJoulesPerKilogramK (double joulesPerGramCelsius){
         return joulesPerGramCelsius * 1000;
     }
 
@@ -66,7 +66,7 @@ public class Utils {
      * @param joulesPerKilogramKelvin J/(kg·K)
      * @return J/(g·C)
      */
-    public static double JoulesPerKilogramKToJoulesPerGramC (double joulesPerKilogramKelvin){
+    public static double joulesPerKilogramKToJoulesPerGramC (double joulesPerKilogramKelvin){
         return joulesPerKilogramKelvin * .001;
     }
 
@@ -116,12 +116,35 @@ public class Utils {
         return 's';
     }
 
+    public static String alternateElementName(String name) {
+        return switch (name.toLowerCase()) {
+            case "aluminium" -> "Aluminum";
+            case "argentum" -> "Silver";
+            case "aurum" -> "Gold";
+            case "caesium", "cæsium" -> "Cesium";
+            case "columbium" -> "Niobium";
+            case "cuprum" -> "Copper";
+            case "ferrum" -> "Iron";
+            case "hydrargyrum" -> "Mercury";
+            case "kalium" -> "Potassium";
+            case "natrium" -> "Sodium";
+            case "plumbum" -> "Lead";
+            case "stannum" -> "Tin";
+            case "stibium" -> "Antimony";
+            case "sulphur" -> "Sulfur";
+            case "ununbium" -> "Copernicium";
+            case "ununquadium" -> "Flerovium";
+            case "wolfram" -> "Tungsten";
+            default -> name;
+        };
+    }
+
     /**
-     * <p></p>Returns the periodic table group in Mendeleev format,
+     * Returns the periodic table group in Mendeleev format,
      * (I, II, III, IV, V, etc.).
      * Example:<pre>
      * {@code groupToMendeleev(Elements.BR.group())}</pre>
-     * will return {@code VII}.</p><p>
+     * will return {@code VII}.
      * @param group the integer using the IUPAC numbering system (1-18) group of the element.
      * @return the element group in Mendeleev Roman numeral format.
      */
@@ -149,11 +172,11 @@ public class Utils {
     }
 
     /**
-     * <p></p>Returns the periodic table group in CAS Roman numeral format,
+     * Returns the periodic table group in CAS Roman numeral format,
      * (IA, IIA, IIIB, IVB, VB, etc.).
      * Example:<pre>
      * {@code groupToCAS(Elements.BR.group())}</pre>
-     * will return {@code VIIA}.</p><p>
+     * will return {@code VIIA}.
      * @param group the integer using the IUPAC numbering system (1-18) group of the element.
      * @return the element group in CAS Roman numeral format.
      */
@@ -168,11 +191,11 @@ public class Utils {
     }
 
     /**
-     * <p></p>Returns the periodic table group in old IUPAC Roman numeral format,
+     * Returns the periodic table group in old IUPAC Roman numeral format,
      * (IA, IIA, IIIA, IVA, VA, etc.).
      * Example:<pre>
      * {@code groupToOldIUPAC(Elements.BR.group())}</pre>
-     * will return {@code VIIB}.</p><p>
+     * will return {@code VIIB}.
      * @param group the integer using the new IUPAC numbering system (1-18) group of the element.
      * @return the element group in old IUPAC Roman numeral format.
      */

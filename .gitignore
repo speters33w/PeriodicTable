@@ -1,25 +1,5 @@
-/src/com/ata/Element.java
-/src/com/ata/ElementsX.java
-/src/com/ata/ElementTest.java
-/src/com/ata/ExpectedElement.java
-/src/com/ata/PeriodicTable.java
-/src/com/ata/PeriodicTableTest.java
-/src/resources/Symbols.enum
-/src/Main.java
-/PeriodicTable.iml
-/README.html
-/README_files/
-/src/resources/.~lock.Elements.enum.csv#
-/.idea/
 /out/
-/src/resources/MetalTypes.webp
-/src/resources/Periodic Table of Elements - PubChem.pdf
-/src/resources/PeriodicTable.jpg
-/src/resources/atomic_mass_abundances.pdf
-/src/resources/Periodic Table of Elements.old.csv
-/src/resources/temp.csv
-/src/GetElementsTest.java
-/src/IsMetal.java
-/src/Neutrons.java
-/src/ValenceTest.java
+/pdf/
+/research/
 /src/temp/
+/.idea/

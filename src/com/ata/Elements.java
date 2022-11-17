@@ -245,11 +245,11 @@ public enum Elements {
     }
 
     /**
-     * <p>Returns the periodic table group in CAS Roman numeral format,
+     * Returns the periodic table group in CAS Roman numeral format,
      * (IA, IIA, IIIB, IVB, VB, etc.).
      * Example:<pre>
      * {@code Elements.BR.groupCAS()}</pre>
-     * will return {@code VIIA}.</p><br><p>
+     * will return {@code VIIA}.
      * @return the group of the element in CAS Roman Numeral format.
      */
     public String groupCAS() {
@@ -257,17 +257,23 @@ public enum Elements {
     }
 
     /**
-     * <p>Returns the periodic table group in old IUPAC Roman numeral format,
+     * Returns the periodic table group in old IUPAC Roman numeral format,
      * (IA, IIA, IIIA, IVA, VA, etc.).
      * Example:<pre>
      * {@code Elements.BR.groupOldIUPAC()}</pre>
-     * will return {@code VIIB}.</p><br><p>
+     * will return {@code VIIB}.
      * @return the group of the element in old IUPAC Roman Numeral format.
      */
     public String groupOldIUPAC() {
         return Utils.groupToOldIUPAC(group);
     }
 
+    /**
+     * An enum for phase shown in the periodic table:
+     * <ul><li>Solid</li>
+     * <li>Liquid</li>
+     * <li>Gas</li></ul>
+     */
     public enum Phase {
         SOLID("Solid"),
         LIQUID("Liquid"),
@@ -311,6 +317,21 @@ public enum Elements {
         return Utils.getBlock(group);
     }
 
+    /**
+     * An enum for atomic metal types:
+     * <ul><li>Alkali Metal</li>
+     * <li>Alkaline Earth Metal</li>
+     * <li>Transition Metal</li>
+     * <li>Post-Transition Metal</li>
+     * <li>Metal</li>
+     * <li>Metalloid</li>
+     * <li>Non-Metal</li>
+     * <li>Halogen</li>
+     * <li>Noble Gas</li>
+     * <li>Lanthanide</li>
+     * <li>Actinide</li>
+     * <li>Transactinide</li></ul>
+     */
     public enum Metal {
         ALKALI("Alkali Metal"),
         ALKALINE_EARTH("Alkaline Earth Metal"),
@@ -743,6 +764,11 @@ public enum Elements {
     }
 
     //todo finish deepToString method.
+
+    /**
+     * Provides a human-readable overview of the element in multi-line format.
+     * @return a human-readable overview of the element in multi-line format.
+     */
     public String deepToString(){
         StringBuilder elementDeepToString = new StringBuilder();
         elementDeepToString.append
