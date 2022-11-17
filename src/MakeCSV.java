@@ -8,10 +8,16 @@ public class MakeCSV {
                 "ionizationEnergy,Density,MeltingPoint,BoilingPoint,stableIsotopes,Discoverer,Year,SpecificHeat," +
                 "NumberOfShells,NumberOfValence\n");
         for (Elements element : Elements.values()) {
-            sb.append(String.format("%s,%s,%s,%.3f,%d,%d,%d,%d,",
-                    element.atomicNumber(), element.elementName(), element.symbol(), element.mass(),
-                    element.neutrons(), element.protons(), element.electrons(), element.period()
-            ));
+            sb.append(String.format("%s,%s,%s,", element.atomicNumber(), element.elementName(), element.symbol()));
+            if (element.mass() >= 0) {
+                StringBuilder mass = new StringBuilder(String.format("%f", element.mass()));
+                while (mass.length() > 1 && mass.charAt(mass.length() - 1) == '0') {
+                    mass.setLength(mass.length() - 1);
+                }
+                sb.append(String.format("%s,", mass));
+            }
+            sb.append(String.format("%d,%d,%d,%d,",
+                    element.neutrons(), element.protons(), element.electrons(), element.period()));
             //todo check if Lanthanides and Actinides are considered as in a numeric group on the table
             //and update enum if so.
             if (element.metalGroup == Elements.Metal.LANTHANIDE && element.atomicNumber() >= 58) {
@@ -56,15 +62,27 @@ public class MakeCSV {
             }
             sb.append(",");
             if (element.density() > 0) {
-                sb.append(String.format("%f", element.density()));
+                StringBuilder density = new StringBuilder(String.format("%f", element.density()));
+                while (density.length() > 1 && density.charAt(density.length() - 1) == '0') {
+                    density.setLength(density.length() - 1);
+                }
+                sb.append(density);
             }
             sb.append(",");
             if (element.meltingPoint() > 0) {
-                sb.append(String.format("%.2f", element.meltingPoint()));
+                StringBuilder meltingPoint = new StringBuilder(String.format("%.2f", element.meltingPoint()));
+                while (meltingPoint.length() > 1 && meltingPoint.charAt(meltingPoint.length() - 1) == '0') {
+                    meltingPoint.setLength(meltingPoint.length() - 1);
+                }
+                sb.append(meltingPoint);
             }
             sb.append(",");
             if (element.boilingPoint() > 0) {
-                sb.append(String.format("%.2f", element.boilingPoint()));
+                StringBuilder boilingPoint = new StringBuilder(String.format("%.2f", element.boilingPoint()));
+                while (boilingPoint.length() > 1 && boilingPoint.charAt(boilingPoint.length() - 1) == '0') {
+                    boilingPoint.setLength(boilingPoint.length() - 1);
+                }
+                sb.append(boilingPoint);
             }
             sb.append(",");
             if (element.stableIsotopes() >= 0) {
