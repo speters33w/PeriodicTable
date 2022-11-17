@@ -1,13 +1,11 @@
 package com.ata;
 
-import java.nio.ByteBuffer;
-import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 import java.time.Year;
 
 /**
  * A Java enum representing thePeriodic Table of the Elements.
- * @author StephanPeters (peterstz,speters33w)
+ * @author StephanPeters (speters33w, peterstz)
  */
 public enum Elements {
     //NAME(atomicNumber,"elementName","symbol",massF,period,group,valence,"phase","metalGroup",radiusVanDerWaals,radiusEmpirical,radiusCovalent,electronegativityF,IonizationEnergyF,density,meltingPointF,boilingPointF,specificHeatF,stableIsotopes,"discoverer",Year.of(year)),
@@ -111,7 +109,7 @@ public enum Elements {
     CF(98,"Californium","Cf",251.07959F,7,-1,2,"Solid","Actinide",245,-1,-1,1.3F,6.2817F,15.1,1173F,1743,-1,0,"Stanley G. Thompson and Kenneth Street and Jr. and Albert Ghiorso and and Glenn T. Seaborg",Year.of(1950)),
     ES(99,"Einsteinium","Es",252.083F,7,-1,2,"Solid","Actinide",245,-1,-1,1.3F,6.42F,8.84,1133F,1269,-1,0,"Gregory R. Choppin and Stanley G. Thompson and Albert Ghiorso and and Bernard G. Harvey",Year.of(1952)),
     FM(100,"Fermium","Fm",257.09511F,7,-1,2,"Solid","Actinide",-1,-1,-1,1.3F,6.5F,9.97,1800F,-1,-1,0,"Gregory R. Choppin and Stanley G. Thompson and Albert Ghiorso and and Bernard G. Harvey",Year.of(1952)),
-    MD(101,"Mendelevium","Md",258.09843F,7,-1,2,"Solid","Actinide",-1,194,-1,1.3F,6.58F,10.3,1100F,-1,-1,0,"Albert Ghiorso and Bernard G. Harvey and Greogory R. Chopin and Stanley G. Thompson and and Glenn T. Seaborg",Year.of(1955)),
+    MD(101,"Mendelevium","Md",258.09843F,7,-1,2,"Solid","Actinide",-1,194,-1,1.3F,6.58F,10.3,1100F,-1,-1,0,"Albert Ghiorso and Bernard G. Harvey and Gregory R. Chopin and Stanley G. Thompson and and Glenn T. Seaborg",Year.of(1955)),
     NO(102,"Nobelium","No",259.101F,7,-1,3,"Solid","Actinide",-1,197,-1,1.3F,6.65F,9.9,1100F,-1,-1,0,"Albert Ghiorso and Torbjorn Sikkeland and John R. Walton and and Glenn T. Seaborg",Year.of(1958)),
     LR(103,"Lawrencium","Lr",266.12F,7,3,2,"Solid","Actinide",-1,171,-1,1.3F,-1,14.4,1900F,-1,-1,0,"Albert Ghiorso and Torbjorn Sikkeland and Almon Larsh and and Robert M. Latimer",Year.of(1961)),
     RF(104,"Rutherfordium","Rf",267.122F,7,4,2,"Solid","Transition metal",-1,157,-1,-1,-1,17,2400F,5800F,-1,0,"Researchers at the JINR and Albert Ghiorso et. al.",Year.of(1964)),
@@ -174,7 +172,7 @@ public enum Elements {
         this.boilingPoint = boilingPoint;
         this.specificHeat = specificHeat;
         this.stableIsotopes = stableIsotopes;
-        this.discoverer = toUtf8(discoverer);
+        this.discoverer = Utils.toUtf8(discoverer);
         this.discoveryYear = discoveryYear;
     }
 
@@ -215,7 +213,7 @@ public enum Elements {
      * Returns the Atomic Weight of an element in atomic mass units (amu).
      * Example:
      * {@code Elements.BR.mass()}
-     * will return {@code 79.904}.<br>
+     * will return {@code 79.904}.<br><br>
      * Data from
      * <a href="https://pubchem.ncbi.nlm.nih.gov/periodic-table/">The National Center for Biotechnology Information</a>
      * @return the Atomic Weight of an element in atomic mass units (amu).
@@ -255,7 +253,7 @@ public enum Elements {
      * @return the group of the element in CAS Roman Numeral format.
      */
     public String groupCAS() {
-        return groupToCAS(group);
+        return Utils.groupToCAS(group);
     }
 
     /**
@@ -267,7 +265,7 @@ public enum Elements {
      * @return the group of the element in old IUPAC Roman Numeral format.
      */
     public String groupOldIUPAC() {
-        return groupToOldIUPAC(group);
+        return Utils.groupToOldIUPAC(group);
     }
 
     public enum Phase {
@@ -291,7 +289,7 @@ public enum Elements {
     }
 
     /**
-     * Returns the phase of the element (solid, liquid, gas, artificial).
+     * Returns the phase of the element (solid, liquid, gas).
      * Example:
      * {@code Elements.BR.phase()}
      * will return {@code "liquid"}.
@@ -310,18 +308,7 @@ public enum Elements {
      */
     public char block(){
         if (symbol.equals("La")) return 'f';
-        return getBlock(group);
-    }
-
-    /**
-     * Returns the metal group of the element (Alkali Metal, Alkaline Earth Metal, Transition Metal, etc.).
-     * Example:
-     * {@code Elements.BR.metalGroup()}
-     * will return {@code "Halogen"}.
-     * @return the metal group of the element.
-     */
-    public String metalGroup() {
-        return metalGroup.metal;
+        return Utils.getBlock(group);
     }
 
     public enum Metal {
@@ -352,6 +339,17 @@ public enum Elements {
     }
 
     /**
+     * Returns the metal group of the element (Alkali Metal, Alkaline Earth Metal, Transition Metal, etc.).
+     * Example:
+     * {@code Elements.BR.metalGroup()}
+     * will return {@code "Halogen"}.
+     * @return the metal group of the element.
+     */
+    public String metalGroup() {
+        return metalGroup.metal;
+    }
+
+    /**
      * Returns the number of protons in an element's atom.
      * Example:
      * {@code Elements.BR.protons()}
@@ -363,7 +361,8 @@ public enum Elements {
     }
 
     /**
-     * Returns the number of neutrons in an element's atom.
+     * Returns the number of neutrons in an element's atom
+     * based on the Atomic mass.
      * Example:
      * {@code Elements.BR.neutrons()}
      * will return {@code 45}.
@@ -389,7 +388,7 @@ public enum Elements {
      * Returns the van der Waals atomic radius of the element in picometers (pm).
      * Example:
      * {@code Elements.BR.radiusVanDerWaals()}
-     * will return {@code 185}.<br>
+     * will return {@code 185}.<br><br>
      * Data from <a href="https://periodic.lanl.gov/index.shtml">Los Alamos National Laboratory</a>.
      * @return the van der Waals atomic radius of the element in picometers (pm).
      */
@@ -410,7 +409,13 @@ public enum Elements {
      * In Morss; Edelstein, Norman M.; Fuger, Jean (eds.).<br>
      * <em>The Chemistry of the Actinide and Transactinide Elements (3rd ed.).</em><br>
      * Dordrecht, The Netherlands: Springer Science+Business Media.<br>
-     * ISBN 978-1-4020-3555-5.
+     * ISBN 978-1-4020-3555-5.<br><br>
+     * Some predictive values from <br>
+     * Bonchev, Danail; Kamenska, Verginia (1981). <br>
+     * <em>Predicting the Properties of the 113–120 Transactinide Elements</em>. <br>
+     * Journal of Physical Chemistry. <br>
+     * American Chemical Society. 85 (9): 1177–1186. <br>
+     * doi:10.1021/j150609a021.
      * @return the empirical atomic radius of the element in picometers (pm).
      */
     public int radiusEmpirical() {
@@ -421,8 +426,14 @@ public enum Elements {
      * Returns the Covalent (single bond) atomic radius of the element in picometers (pm).
      * Example:
      * {@code Elements.BR.radiusCovalent()}
-     * will return {@code 114}.<br>
-     * Most predictive values from the<a href="https://www.rsc.org/periodic-table">Royal Society of Chemistry</a>.
+     * will return {@code 114}.<br><br>
+     * Most predictive values from the <a href="https://www.rsc.org/periodic-table">Royal Society of Chemistry</a>.<br><br>
+     * Some predictive values from <br>
+     * Bonchev, Danail; Kamenska, Verginia (1981). <br>
+     * <em>Predicting the Properties of the 113–120 Transactinide Elements</em>. <br>
+     * Journal of Physical Chemistry. <br>
+     * American Chemical Society. 85 (9): 1177–1186. <br>
+     * doi:10.1021/j150609a021.
      * @return the Covalent (single bond) atomic radius of the element in picometers (pm).
      */
     public int radiusCovalent() {
@@ -742,173 +753,5 @@ public enum Elements {
                  phase.phaseName));
 
         return elementDeepToString.toString();
-    }
-
-    //////////  /* STATIC UTILITY METHODS */ //////////
-
-    /**
-     * Converts Kelvin to Celsius.
-     * @param k temperature in degrees Celsius.
-     * @return temperature in degrees Celsius.
-     */
-    public static double kelvinToCelsius(double k){
-        if(k == -1) {
-            return k;
-        } else {
-            return k - 273.15F;
-        }
-    }
-
-    /**
-     * Converts Kelvin to Fahrenheit.
-     * @param k temperature in degrees Kelvin.
-     * @return temperature in degrees Fahrenheit.
-     */
-    public static double kelvinToFahrenheit(double k){
-        if (k == -1) {
-            return k;
-        } else {
-            return (k - 273.15F) * 1.8F + 32;
-        }
-    }
-
-    /**
-     * Converts J/(g·C) to J/(kg·K) for specific heat.
-     * @param joulesPerGramCelsius J/(g·C)
-     * @return J/(kg·K)
-     */
-    public static double JoulesPerGramCToJoulesPerKilogramK (double joulesPerGramCelsius){
-        return joulesPerGramCelsius * 1000;
-    }
-
-    /**
-     * Converts J/(kg·K) to J/(g·C) for specific heat.
-     * @param joulesPerKilogramKelvin J/(kg·K)
-     * @return J/(g·C)
-     */
-    public static double JoulesPerKilogramKToJoulesPerGramC (double joulesPerKilogramKelvin){
-        return joulesPerKilogramKelvin * .001;
-    }
-
-    /**
-     * Makes a string UTF-8 encoded.
-     * @param string The string to be encoded.
-     * @return The encoded string.
-     */
-    public static String toUtf8(String string) {
-        ByteBuffer buffer = StandardCharsets.UTF_8.encode(string);
-        return StandardCharsets.UTF_8.decode(buffer).toString();
-    }
-
-    /**
-     * Returns the periodic table block of the element.
-     * Returns an incorrect block for Lanthanum, use Elements.block(int group, int period) instead.
-     * @param group the periodic table group of the element using the IUPAC numbering system (1-18).
-     * @return the periodic table block of the element.
-     */
-    char getBlock(int group){
-        if (group == -1) {
-            return 'f';
-        }
-        if (group >= 13) {
-            return 'p';
-        } else if (group >= 3){
-            return 'd';
-        }
-        return 's';
-    }
-
-    /**
-     * Returns the periodic table block of the element.
-     * @param group the periodic table group of the element using the IUPAC numbering system (1-18).
-     * @param period the periodic table period of the element
-     * @return the periodic table block of the element.
-     */
-    public char getBlock(int group, int period){
-        if (group == -1 || (group == 3 && period == 6)) {
-            return 'f';
-        }
-        if (group >= 13) {
-            return 'p';
-        } else if (group >= 3){
-            return 'd';
-        }
-        return 's';
-    }
-
-    /**
-     * <p></p>Returns the periodic table group in Mendeleev format,
-     * (I, II, III, IV, V, etc.).
-     * Example:<pre>
-     * {@code groupToMendeleev(Elements.BR.group())}</pre>
-     * will return {@code VII}.</p><p>
-     * @param group the integer using the IUPAC numbering system (1-18) group of the element.
-     * @return the element group in Mendeleev Roman numeral format.
-     */
-    public static String groupToMendeleev(int group){
-        StringBuilder mendeleev = new StringBuilder();
-        if (group > 8) {
-            if (group > 10) {
-                group -= 10;
-            } else {
-                group = 8;
-            }
-        }
-        if(group % 5 == 4) {
-            mendeleev.append("I");
-            group++;
-        }
-        if (group >= 5){
-            mendeleev.append("V");
-            group -= 5;
-        }
-        if (group != 0) {
-            mendeleev.append("I".repeat(group));
-        }
-        return mendeleev.toString();
-    }
-
-    /**
-     * <p></p>Returns the periodic table group in CAS Roman numeral format,
-     * (IA, IIA, IIIB, IVB, VB, etc.).
-     * Example:<pre>
-     * {@code groupToCAS(Elements.BR.group())}</pre>
-     * will return {@code VIIA}.</p><p>
-     * @param group the integer using the IUPAC numbering system (1-18) group of the element.
-     * @return the element group in CAS Roman numeral format.
-     */
-    public static String groupToCAS(int group) {
-        StringBuilder cas = new StringBuilder(groupToMendeleev(group));
-        String ab = "A";
-        if (group > 2 && group < 13) {
-            ab = "B";
-        }
-        cas.append(ab);
-        return cas.toString();
-    }
-
-    /**
-     * <p></p>Returns the periodic table group in old IUPAC Roman numeral format,
-     * (IA, IIA, IIIA, IVA, VA, etc.).
-     * Example:<pre>
-     * {@code groupToOldIUPAC(Elements.BR.group())}</pre>
-     * will return {@code VIIB}.</p><p>
-     * @param group the integer using the new IUPAC numbering system (1-18) group of the element.
-     * @return the element group in old IUPAC Roman numeral format.
-     */
-    public static String groupToOldIUPAC(int group) {
-        StringBuilder oldIupac = new StringBuilder(groupToMendeleev(group));
-        if (groupToMendeleev(group).equals("VIII")) {
-            return "0";
-        }
-        String ab = "";
-        if (group <= 7) {
-            ab = "A";
-        }
-        if (group >= 11) {
-            ab = "B";
-        }
-        oldIupac.append(ab);
-        return oldIupac.toString();
     }
 }
